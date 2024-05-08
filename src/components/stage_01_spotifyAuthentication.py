@@ -2,7 +2,6 @@
 import sys
 import base64
 import requests
-import pandas as pd
 from src.exceptionFile import my_exception
 from src.mylogger import logging
 

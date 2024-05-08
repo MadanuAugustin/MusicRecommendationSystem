@@ -1,6 +1,7 @@
 
 
-from src.components.spotifyAuthentication import authenticationConfig
+from src.components.stage_01_spotifyAuthentication import authenticationConfig
+from src.components.stage_02_dataFetching import dataFetchingConfig
 from src.exceptionFile import my_exception
 from src.mylogger import logging
 import sys
@@ -23,5 +24,21 @@ try:
 
     print(f'----------{STAGE_NAME} completed----------------')
 
+except Exception as e:
+    raise my_exception(e, sys)
+
+
+STAGE_NAME = 'DATA_FETCHING'
+
+try:
+
+    logging.info(f'-------------{STAGE_NAME} started -----------')
+
+    print(f'-------------{STAGE_NAME} started -----------')
+
+    data = dataFetchingConfig()
+
+    mydf = data.data_fetching(playlist_id = "37i9dQZF1DX76Wlfdnj7AP", access_token = mytoken)
+    
 except Exception as e:
     raise my_exception(e, sys)
