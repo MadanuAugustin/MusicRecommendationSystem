@@ -19,7 +19,7 @@ class dataFetchingConfig:
 
             logging.info('Entered data_fetching method...!')
 
-            print('Entered data_fetching method...!')
+            print('Entered data_fetching method...!\n')
 
             # setting up Spotipy with access token
             sp = spotipy.Spotify(auth = access_token)
@@ -101,19 +101,24 @@ class dataFetchingConfig:
 
 
             # creating dataframe from the above dictionary
-            logging.info('Created dataframe of the fetched data...!')
-            print('Created dataframe of the fetched data...!')
 
             df =  pd.DataFrame(music_data)
 
-            logging.info('Saved dataframe as a CSV format in artifacts directory...!')
-            print('Saved dataframe as a CSV format in artifacts directory...!')
+            print(f'Fetched data with the Feature Names as {df.columns} \n')
+
+            logging.info('Created dataframe of the fetched data...!')
+
+            print('Created dataframe of the fetched data...!\n')
 
             df.to_csv('artifacts//spotifyData.csv', header=True)
 
+            logging.info('Saved dataframe as a CSV format in artifacts directory...!')
+            
+            print('Saved dataframe as a CSV format in artifacts directory...!\n')
+
             logging.info('Exited data_fetching method...!')
 
-            print('Exited data_fetching method...!')
+            print('Exited data_fetching method...!\n')
 
             return df
         

@@ -23,7 +23,7 @@ class authenticationConfig:
 
             logging.info('Entered start_authentication method...!')
 
-            print('Entered start_authentication method...!')
+            print('Entered start_authentication method...!\n')
 
             client_credentials = f"{CLIENT_ID}:{CLIENT_SECRET}"
 
@@ -41,21 +41,23 @@ class authenticationConfig:
 
             logging.info('Requesting the access token...!')
 
+            print('Requesting the access token...!\n')
+
             response = requests.post(token_URL, data = data, headers = headers)
 
             if response.status_code == 200:
                 access_token = response.json()['access_token']
                 logging.info('Access token obtained successfully...!')
-                print('Access token obtained successfully...!')
+                print('Access token obtained successfully...!\n')
 
             else:
                 logging.info('Error obtaining access token...!')
-                print('Error obtaining access token...!')
+                print('Error obtaining access token...!\n')
                 exit()
 
             logging.info('Exited start_authentication method...!')
 
-            print('Exited start_authentication method...!')
+            print('Exited start_authentication method...!\n')
 
 
             return str(access_token)
